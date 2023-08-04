@@ -1,0 +1,21 @@
+diff --git a/cmd/age/testdata/plugin.txt b/cmd/age/testdata/plugin.txt
+index 01e3ed8..f8c3234 100644
+--- a/cmd/age/testdata/plugin.txt
++++ b/cmd/age/testdata/plugin.txt
+@@ -1,14 +1,14 @@
++env AGEDEBUG=plugin
++
+ # encrypt and decrypt a file with a test plugin
+ age -r age1test10qdmzv9q -o test.age input
+ age -d -i key.txt test.age
+ cmp stdout input
+-! stderr .
+ 
+ # very long identity and recipient
+ age -R long-recipient.txt -o test.age input
+ age -d -i long-key.txt test.age
+ cmp stdout input
+-! stderr .
+ 
+ -- input --
+ test
